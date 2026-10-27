@@ -93,9 +93,9 @@ authRouter.post('/logout', async (request, response) => {
 });
 
 authRouter.post('/onboarding', requireUser, async (request, response) => {
-  const parsed = z.object({ role: roleSchema, organizationName: z.string().trim().min(2).max(180), area: z.string().trim().max(180).optional() }).safeParse(request.body);
-  if (!parsed.success) { response.status(400).json({ error: 'Choose a valid role and organization name.' }); return; }
+  const parsed = z.object({ role: roleSchema, organizationName: z.string().trim().max(180).optional(), area: z.string().trim().max(180).optional() }).safeParse(request.body);
+  if (!parsed.success) { response.status(400).json({ error: 'Choose a valid role. Organization name can be added later.' }); return; }
   const user = request.foodloopUser!;
-  await getDb().update(users).set({ role: parsed.data.role, organizationName: parsed.data.organizationName, area: parsed.data.area ?? null, onboardingComplete: true }).where(eq(users.id, user.id));
+  await getDb().update(users).set({ role: parsed.data.role, organizationName: parsed.data.organizationName || null, area: parsed.data.area ?? null, onboardingComplete: true }).where(eq(users.id, user.id));
   response.json({ ok: true });
 });

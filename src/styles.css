@@ -257,3 +257,7 @@ div { padding-top: 2px; }.expiry-alert > a { align-self: center; font-size: 7px;
   .explore-role { font-size: 9px; }
   .role-select { max-width: 116px; font-size: 11px; }
 }
+
+
+.onboarding-field-hint { color: #7e8a7d; font-size: 11px; line-height: 1.5; }
+@media (max-width: 700px) { .onboarding-card .field-label input, .onboarding-card .field-label select { min-height: 46px; font-size: 16px; } .onboarding-field-hint { font-size: 12px; } }

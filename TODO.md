@@ -54,3 +54,9 @@
 - [x] Provide a dedicated `/explore` screen-picker with at least 10 distinct, clearly named product-page choices; each choice selects the matching sample role and opens its own working route. Keep the complete FoodLoop feature set available through clear links/buttons so the app does not feel like one long landing screen.
 - [x] Fix the reported inability to select controls or progress: primary links, demo entry, role switcher, form fields, cards/actions and navigation must respond to pointer, touch and keyboard input, with no blocking invisible overlay or disabled-looking control; users must be able to advance through donor → NGO → delivery partner → tracking/handoff.
 - [x] Refine the responsive mobile experience at phone widths as well as tablet/desktop; preserve readable text, usable touch targets, and the existing lightweight 3D-inspired depth and transitions without sacrificing page load or accessibility.
+
+
+## 9. Follow-up from the onboarding screenshot
+- [x] On the role-selection page, donors, NGOs/food banks and delivery partners can continue without entering an organization name, as the copy already says organization details can be updated later; save the name as nullable when omitted and preserve the selected role for the workspace.
+- [x] Make a signed-in user's onboarding Continue action show a clear saving state, report API failures inline/accessibly, and navigate into the workspace after a successful save without requiring a manual page refresh.
+- [x] Keep demo onboarding sample-only: selecting a demo role and continuing opens the demo dashboard without writing to authenticated records.

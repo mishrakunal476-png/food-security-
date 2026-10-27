@@ -16,7 +16,7 @@ type AuthContextValue = {
   error: string | null;
   beginSignIn: () => Promise<void>;
   signOut: () => Promise<void>;
-  refresh: () => Promise<void>;
+  refresh: () => Promise<AuthUser | null>;
 };
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -33,9 +33,11 @@ export function AuthProvider({ children }: PropsWithChildren) {
       const body = await response.json() as { user: AuthUser | null };
       setUser(body.user);
       setError(null);
+      return body.user;
     } catch {
       setUser(null);
       setError('Sign-in service is not available right now. You can still explore the clearly labeled demo.');
+      return null;
     } finally {
       setLoading(false);
     }

@@ -60,3 +60,7 @@ README will describe the problem, roles/features, setup, demo walkthrough, archi
 
 ## Follow-up refinement requested by the user
 The application already has 20 distinct page routes, but users need a clearer way to discover them and proceed from mobile. Add a dedicated public `/explore` screen-picker page with 10 clearly named demo entry cards. Each card will select the matching sample role and navigate to an existing functional page; the landing and sign-in demo CTAs will lead to this chooser. Update `public/manus-routes.json`, keep the existing React Router and backend architecture, and style the page with FoodLoop's existing warm palette, tactile depth, accessible focus/touch targets, and responsive two-column mobile layout. No new service or dependency is needed.
+
+
+## Follow-up fix from the user's onboarding screenshot
+The role-selection page explicitly says organization details can be updated later, but the authenticated endpoint currently rejects a blank organization name. Align the UI/API contract: role selection must complete without an organization name, persist that field as `NULL` when omitted, and move the signed-in user into the workspace. Keep the form's optionality clear and provide visible saving/error feedback so an API failure is not a silent dead end. The demo path should continue using its existing sample-only behavior.
