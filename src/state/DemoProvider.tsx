@@ -27,7 +27,7 @@ type ContextValue = DemoState & {
   loadingRecords: boolean;
   remoteError: string | null;
   setRole: (role: Role) => void;
-  startDemo: () => void;
+  startDemo: (initialRole?: Role) => void;
   endDemo: () => void;
   createDonation: (input: FoodListingInput) => Promise<string | null>;
   acceptDonation: (id: string) => void;
@@ -105,7 +105,11 @@ export function DemoProvider({ children }: PropsWithChildren) {
   const api = useMemo<ContextValue>(() => ({
     ...state, role, actor, donations, notifications, demoActive, loadingRecords, remoteError,
     setRole: (nextRole) => { if (demoActive) setState((previous) => ({ ...previous, role: nextRole })); },
-    startDemo: () => { setRemoteError(null); setDemoActive(true); },
+    startDemo: (initialRole) => {
+      setRemoteError(null);
+      if (initialRole) setState((previous) => ({ ...previous, role: initialRole }));
+      setDemoActive(true);
+    },
     endDemo: () => { setDemoActive(false); setState(initialState()); },
     refreshRemote,
     createDonation: async (input) => {

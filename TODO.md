@@ -48,3 +48,9 @@
 - [x] Use selective 3D-inspired depth, layered cards, subtle animations, an interactive map-style illustration/markers, smooth transitions and clear status animations without slowing or distracting from product actions.
 - [x] Keep all UI readable, accessible, mobile-friendly and credible; use reduced-motion support. Avoid heavy decorative 3D that sacrifices the working end-to-end demo.
 - [x] Be explicit wherever AI, maps, payments (if any), messages, tracking and confirmations are simulated; never present estimates as verified outcomes or claim real-world food-safety certification.
+
+
+## 8. Follow-up from the user: selectable, multi-page, mobile 3D experience
+- [x] Provide a dedicated `/explore` screen-picker with at least 10 distinct, clearly named product-page choices; each choice selects the matching sample role and opens its own working route. Keep the complete FoodLoop feature set available through clear links/buttons so the app does not feel like one long landing screen.
+- [x] Fix the reported inability to select controls or progress: primary links, demo entry, role switcher, form fields, cards/actions and navigation must respond to pointer, touch and keyboard input, with no blocking invisible overlay or disabled-looking control; users must be able to advance through donor → NGO → delivery partner → tracking/handoff.
+- [x] Refine the responsive mobile experience at phone widths as well as tablet/desktop; preserve readable text, usable touch targets, and the existing lightweight 3D-inspired depth and transitions without sacrificing page load or accessibility.

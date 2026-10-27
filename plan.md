@@ -56,3 +56,7 @@ Serve the Vite app and Express API from the configured project runtime on port `
 ## Hackathon handoff
 
 README will describe the problem, roles/features, setup, demo walkthrough, architecture, simulated integrations/limitations, and contribution guidance without inventing teammate work. Include `.gitignore`, `docs/architecture.mmd`, decisions and demo-recording steps. Keep all commits authentic; do not claim contributions for other people or commit build folders/secrets. Organizers must confirm repository visibility/URL, deadline/time zone and submission format.
+
+
+## Follow-up refinement requested by the user
+The application already has 20 distinct page routes, but users need a clearer way to discover them and proceed from mobile. Add a dedicated public `/explore` screen-picker page with 10 clearly named demo entry cards. Each card will select the matching sample role and navigate to an existing functional page; the landing and sign-in demo CTAs will lead to this chooser. Update `public/manus-routes.json`, keep the existing React Router and backend architecture, and style the page with FoodLoop's existing warm palette, tactile depth, accessible focus/touch targets, and responsive two-column mobile layout. No new service or dependency is needed.

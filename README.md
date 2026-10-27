@@ -4,9 +4,9 @@ FoodLoop is a college-hackathon product prototype for moving surplus meals from 
 
 ## Roles and demo
 
-The app supports four role experiences: Food Donor, NGO / Food Bank, Delivery Partner and Admin. The first screen offers sign-in/register and **Explore demo mode**. Real accounts use Manus OAuth; FoodLoop does not ask for or store passwords. Demo mode uses local sample organizations, donations, partner identities, notifications and activity; role switching is explicitly demo-only and does not authenticate a real account. Admin monitoring in this prototype is sample-only; real admin provisioning and user monitoring are not configured.
+The app supports four role experiences: Food Donor, NGO / Food Bank, Delivery Partner and Admin. The first screen offers sign-in/register and **Explore demo**; this opens a separate screen picker with ten direct links to working feature routes. Each entry starts the matching sample role, and the workspace also provides role-aware navigation. Real accounts use Manus OAuth; FoodLoop does not ask for or store passwords. Demo mode uses local sample organizations, donations, partner identities, notifications and activity; role switching is explicitly demo-only and does not authenticate a real account. Admin monitoring in this prototype is sample-only; real admin provisioning and user monitoring are not configured.
 
-Recommended judge walkthrough: (1) enter demo mode as Food Donor and create a listing with servings, preparation, pickup, storage, allergens and use-by; (2) switch to NGO / Food Bank, review details and accept; (3) switch to Delivery Partner and accept a route; (4) open a delivery timeline and confirm pickup/delivery; (5) on the overview, switch to donor, NGO or admin, press **Simulate delivery failure**, then confirm a backup partner and inspect the retained assignment history. The seeded sample listing `FL-2418` is already partner-assigned to make the failure scenario immediately available.
+Recommended judge walkthrough: (1) choose **List surplus food** from the screen picker and create a listing with servings, preparation, pickup, storage, allergens and use-by; (2) open **Browse donations** or **Donation details** as NGO / Food Bank, review and accept; (3) open **Delivery jobs** as Delivery Partner and accept a route; (4) open **Live tracking** and confirm pickup/delivery; (5) return to **Overview dashboard**, press **Simulate delivery failure**, then confirm a backup partner and inspect the retained assignment history. The seeded sample listing `FL-2418` is already partner-assigned to make the failure scenario immediately available.
 
 ## Product areas
 
@@ -56,7 +56,7 @@ For a live deployment, configure production OAuth redirect policy, validate iden
 
 ## Tests
 
-`pnpm test` exercises form requirements, use-by versus estimated arrival, NGO capacity/category/distance fit, partner backup suitability, allowed delivery status transitions and illustrative impact calculations. Keep additional user interface and API tests focused on core acceptance and authorization behavior.
+`pnpm test` exercises form requirements, use-by versus estimated arrival, NGO capacity/category/distance fit, partner backup suitability, allowed delivery status transitions, illustrative impact calculations and all ten screen-picker route/role choices.
 
 ## Team contributions and submission
 

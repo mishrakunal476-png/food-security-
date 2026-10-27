@@ -1,6 +1,7 @@
 {
   "routes": [
     { "path": "/", "title": "FoodLoop home" },
+    { "path": "/explore", "title": "Explore FoodLoop pages" },
     { "path": "/login", "title": "Log in" },
     { "path": "/register", "title": "Create an account" },
     { "path": "/reset-password", "title": "Password help" },

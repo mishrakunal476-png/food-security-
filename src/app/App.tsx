@@ -5,6 +5,7 @@ import { ChatWidget } from '../components/ChatWidget';
 import { useAuth } from '../auth/AuthProvider';
 import { useDemo } from '../state/DemoProvider';
 import { LandingPage } from '../pages/LandingPage';
+import { ExplorePage } from '../pages/ExplorePage';
 import { LoginPage, OnboardingPage, ResetPasswordPage } from '../pages/AuthPages';
 import { DashboardPage } from '../pages/DashboardPage';
 import { DonationsPage, NewDonationPage, DonationDetailPage } from '../pages/DonationPages';
@@ -29,6 +30,7 @@ export function App() {
   return <>
     <Routes>
       <Route path="/" element={<LandingPage />} />
+      <Route path="/explore" element={<ExplorePage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<LoginPage register />} />
       <Route path="/reset-password" element={<ResetPasswordPage />} />

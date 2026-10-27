@@ -9,17 +9,16 @@ import type { Role } from '../../shared/types';
 
 export function LoginPage({ register = false }: { register?: boolean }) {
   const { beginSignIn, error: authError } = useAuth();
-  const { startDemo } = useDemo();
   const navigate = useNavigate();
   const [error, setError] = useState<string | null>(null);
   const signIn = async () => {
     try { await beginSignIn(); } catch (reason) { setError(reason instanceof Error ? reason.message : 'Could not start sign-in.'); }
   };
-  const explore = () => { startDemo(); navigate('/dashboard'); };
+  const explore = () => navigate('/explore');
   return <div className="auth-page"><div className="auth-left"><Link to="/" aria-label="Back to FoodLoop"><Brand /></Link><div className="auth-story"><div className="eyebrow eyebrow--green">{register ? 'JOIN THE LOCAL LOOP' : 'GOOD FOOD, MOVING'} </div><h1>{register ? 'Make room for<br/><em>one more meal.</em>' : 'Keep good food<br/><em>in motion.</em>'}</h1><p>FoodLoop brings kitchens, food banks and local delivery partners together before surplus becomes waste.</p><div className="auth-check"><span><Check size={14} /></span> Clear allergens and use-by details</div><div className="auth-check"><span><Check size={14} /></span> A human-confirmed handoff</div><div className="auth-check"><span><Check size={14} /></span> Sample mode for your first look</div></div><div className="auth-bottom">A practical community loop. Not another food waste promise.</div></div>
     <div className="auth-right"><Link to="/" className="back-link"><ArrowLeft size={16} /> Back to home</Link><div className="auth-card"><DemoTag>SECURE ACCOUNT</DemoTag><h2>{register ? 'Create your account' : 'Welcome back'}</h2><p>Sign in securely with your Manus account. FoodLoop never asks for or stores your password.</p><Button className="auth-provider-button" onClick={() => void signIn()}><LockKeyhole size={17} /> Continue with Manus <ArrowRight size={16} /></Button>
       {(error || authError) && <div className="form-error" role="alert">{error || authError}</div>}
-      <div className="auth-divider"><span>or</span></div><button className="demo-entry-button" onClick={explore}><span className="demo-entry-icon"><Sparkles size={18} /></span><span><strong>Explore demo mode</strong><small>Try every role with sample data—no sign-in.</small></span><ArrowRight size={16} /></button>
+      <div className="auth-divider"><span>or</span></div><button className="demo-entry-button" onClick={explore}><span className="demo-entry-icon"><Sparkles size={18} /></span><span><strong>Explore demo mode</strong><small>Choose from 10 working screens—no sign-in.</small></span><ArrowRight size={16} /></button>
       <div className="auth-policy"><ShieldCheck size={16} /><span>Private details stay limited to people involved in an active donation.</span></div>
       <div className="auth-switch">{register ? <>Already have an account? <Link to="/login">Log in</Link></> : <>New to FoodLoop? <Link to="/register">Create an account</Link></>}</div>
       {!register && <Link to="/reset-password" className="forgot-link">Need help with your password?</Link>}
