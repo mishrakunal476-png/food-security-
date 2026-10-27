@@ -64,3 +64,7 @@ The application already has 20 distinct page routes, but users need a clearer wa
 
 ## Follow-up fix from the user's onboarding screenshot
 The role-selection page explicitly says organization details can be updated later, but the authenticated endpoint currently rejects a blank organization name. Align the UI/API contract: role selection must complete without an organization name, persist that field as `NULL` when omitted, and move the signed-in user into the workspace. Keep the form's optionality clear and provide visible saving/error feedback so an API failure is not a silent dead end. The demo path should continue using its existing sample-only behavior.
+
+
+## Follow-up: mirror every FoodLoop commit to the user's GitHub repository
+Keep the Manus `origin` remote untouched for canonical checkpoints and add the user's exact repository as a separate `github` remote. Install a repository-tracked `post-commit` hook that mirrors the current branch after each commit using the authorized GitHub CLI credential helper. Before pushing, fetch the destination and require its branch tip to be an ancestor of the local commit; use a normal non-force push only. If credentials are unavailable or GitHub has commits missing locally, leave the commit intact, report the skipped mirror, and require reconciliation rather than overwriting remote history. Track the hook, installer, recovery script and operator notes in the repository so the setup can be restored in a fresh checkout; commit no credentials.

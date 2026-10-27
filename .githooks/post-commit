@@ -1,0 +1,13 @@
+#!/bin/sh
+repo_root=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
+sync_script="$repo_root/scripts/sync-github.sh"
+
+if [ ! -x "$sync_script" ]; then
+  echo 'FoodLoop: commit saved locally, but GitHub sync script is missing; run scripts/install-github-sync.sh.' >&2
+  exit 0
+fi
+
+if ! "$sync_script"; then
+  echo 'FoodLoop: commit is safe locally, but its GitHub mirror did not complete. Resolve the warning and run scripts/sync-github.sh.' >&2
+fi
+exit 0

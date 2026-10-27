@@ -60,3 +60,9 @@
 - [x] On the role-selection page, donors, NGOs/food banks and delivery partners can continue without entering an organization name, as the copy already says organization details can be updated later; save the name as nullable when omitted and preserve the selected role for the workspace.
 - [x] Make a signed-in user's onboarding Continue action show a clear saving state, report API failures inline/accessibly, and navigate into the workspace after a successful save without requiring a manual page refresh.
 - [x] Keep demo onboarding sample-only: selecting a demo role and continuing opens the demo dashboard without writing to authenticated records.
+
+
+## 10. User-requested ongoing GitHub commit mirror
+- [ ] Mirror each committed branch from this FoodLoop checkout to the same branch in `https://github.com/mishrakunal476-png/food-security-` after each commit; preserve every reachable commit rather than exporting only a file snapshot.
+- [ ] Keep the Manus `origin` remote and its checkpoint workflow unchanged; never force-push. Fetch GitHub first and skip/report any push if the destination contains commits not present locally, or if authorization/network fails.
+- [ ] Include a tracked hook, safe installer/manual sync script and clear recovery notes so the behavior can be restored in a fresh checkout without committing credentials.

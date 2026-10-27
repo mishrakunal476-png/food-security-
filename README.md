@@ -54,6 +54,10 @@ Allergens, storage, preparation and expiry are displayed as donor-provided infor
 
 For a live deployment, configure production OAuth redirect policy, validate identity/role access, establish data retention and safety procedures, add actual mapping/notification/delivery integrations, and review the managed database before rollout. No real integration or compliance certification is implied by this demo.
 
+## GitHub commit sync
+
+FoodLoop mirrors commits from this checkout to [the user's GitHub repository](https://github.com/mishrakunal476-png/food-security-) on the matching branch. The Manus `origin` remote remains separate for project checkpoints. The tracked post-commit hook uses fast-forward-only pushes, never force-pushes, and skips a mirror if GitHub has commits missing locally. To restore the hook in a fresh checkout, run `scripts/install-github-sync.sh`; for manual recovery, see [the sync guide](docs/github-sync.md). No credentials are stored in the repository.
+
 ## Tests
 
 `pnpm test` exercises form requirements, use-by versus estimated arrival, NGO capacity/category/distance fit, partner backup suitability, allowed delivery status transitions, illustrative impact calculations and all ten screen-picker route/role choices.
@@ -62,4 +66,4 @@ For a live deployment, configure production OAuth redirect policy, validate iden
 
 This starter deliberately makes no claim that teammates contributed or that any contribution was committed. Each teammate should use their own account and submit at least one genuine, reviewable contribution to the designated repository. Do not create fake commits or commit secrets/build output. Use small, focused commit messages, such as `feat: add donation acceptance flow` or `test: cover delivery reassignment`.
 
-Before submitting, confirm the official repository URL and visibility, deadline/time zone, and submission form or format with the organizers. This prototype is not automatically connected to a public GitHub submission repository.
+Before submitting, confirm the official repository URL and visibility, deadline/time zone, and submission form or format with the organizers. The current GitHub repository is public; review its visibility and contents before sharing additional sensitive material.
