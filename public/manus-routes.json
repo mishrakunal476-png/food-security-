@@ -1,0 +1,24 @@
+{
+  "routes": [
+    { "path": "/", "title": "FoodLoop home" },
+    { "path": "/login", "title": "Log in" },
+    { "path": "/register", "title": "Create an account" },
+    { "path": "/reset-password", "title": "Password help" },
+    { "path": "/onboarding", "title": "Organization onboarding" },
+    { "path": "/dashboard", "title": "Dashboard" },
+    { "path": "/donations", "title": "Browse donations" },
+    { "path": "/donations/new", "title": "Create a listing" },
+    { "path": "/donations/:donationId", "title": "Donation detail" },
+    { "path": "/jobs", "title": "Partner jobs" },
+    { "path": "/tracking/:donationId", "title": "Delivery tracking" },
+    { "path": "/support", "title": "FoodLoop support" },
+    { "path": "/notifications", "title": "Notifications" },
+    { "path": "/impact", "title": "Community impact" },
+    { "path": "/profile", "title": "Profile and settings" },
+    { "path": "/admin", "title": "Admin dashboard" },
+    { "path": "/help", "title": "Help center" },
+    { "path": "/food-safety", "title": "Food safety guidance" },
+    { "path": "/privacy", "title": "Privacy" },
+    { "path": "/terms", "title": "Terms" }
+  ]
+}

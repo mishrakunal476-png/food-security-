@@ -1,0 +1,29 @@
+flowchart LR
+  Browser[Responsive React app]
+  Routes[React Router + route manifest]
+  Demo[Demo adapter<br/>sample data in browser storage]
+  ClientAPI[Relative /api client]
+  Express[Express API<br/>port 3000]
+  Auth[Manus OAuth + app session]
+  Rules[Role and participant authorization]
+  Donations[Donation and delivery API]
+  Support[AI support proxy]
+  Drizzle[Drizzle ORM]
+  MySQL[(Managed MySQL)]
+  LLM[Manus AI service]
+  Assets[Managed hero artwork]
+
+  Browser --> Routes
+  Routes --> Demo
+  Routes --> ClientAPI
+  ClientAPI --> Express
+  Express --> Auth
+  Express --> Rules
+  Rules --> Donations
+  Rules --> Support
+  Donations --> Drizzle
+  Auth --> Drizzle
+  Support --> Drizzle
+  Drizzle --> MySQL
+  Support --> LLM
+  Browser --> Assets
