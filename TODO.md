@@ -63,6 +63,6 @@
 
 
 ## 10. User-requested ongoing GitHub commit mirror
-- [ ] Mirror each committed branch from this FoodLoop checkout to the same branch in `https://github.com/mishrakunal476-png/food-security-` after each commit; preserve every reachable commit rather than exporting only a file snapshot.
-- [ ] Keep the Manus `origin` remote and its checkpoint workflow unchanged; never force-push. Fetch GitHub first and skip/report any push if the destination contains commits not present locally, or if authorization/network fails.
-- [ ] Include a tracked hook, safe installer/manual sync script and clear recovery notes so the behavior can be restored in a fresh checkout without committing credentials.
+- [x] Mirror each committed branch from this FoodLoop checkout to the same branch in `https://github.com/mishrakunal476-png/food-security-` after each commit; preserve every reachable commit rather than exporting only a file snapshot.
+- [x] Keep the Manus `origin` remote and its checkpoint workflow unchanged; never force-push. Fetch GitHub first and skip/report any push if the destination contains commits not present locally, or if authorization/network fails.
+- [x] Include a tracked hook, safe installer/manual sync script and clear recovery notes so the behavior can be restored in a fresh checkout without committing credentials.
